@@ -24,8 +24,11 @@ export const CarApi = createApi({
                     'Content-Type': 'application/json'
                 }
             })
-        })
+        }),
+        getCarById:builder.query({
+            query:(id)=> `cars/${id}`
+        }),
     }),
 })
 
-export const { useGetCarsQuery, useDeleteCarsMutation, useAddCarMutation } = CarApi
+export const { useGetCarsQuery, useDeleteCarsMutation, useAddCarMutation, useGetCarByIdQuery } = CarApi

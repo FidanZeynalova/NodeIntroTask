@@ -44,11 +44,7 @@ app.get("/cars", async (req, res) => {
 app.get("/cars/:id", async (req, res) => {
     let { id } = req.params
     let myCar = await CarModel.findById(id)
-    res.send({
-        message: "Success Car Data Id",
-        data: myCar
-
-    })
+    res.send({ data: myCar })
 })
 
 // Dataya post etmek
